@@ -1,0 +1,26 @@
+{
+    "name": "Labs Support Portwigger",
+    "version": "1.0.01",
+    "description": "Hỗ trợ duy trì kết nối tới các bài Labs của PortSwiigger.",
+    "manifest_version": 2,
+    "icons": {
+        "128": "/images/128.png",
+        "48": "/images/48.png",
+        "16": "/images/16.png"
+    },
+    "browser_action": {
+        "default_icon": "/images/16.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["/js/content.js"]
+    }],
+    "background": {
+        "scripts": ["/js/contextMenus.js", "/js/event.js"],
+        "permissions": false
+    },
+    "permissions": [
+        "contextMenus"
+    ]
+}
